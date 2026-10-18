@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+:root{--paper:#fff3e2;--red:#ff3829;--ink:#202020}
+html{scroll-behavior:smooth}
+body{margin:0;background:#202020;color:var(--ink);font-family:"Manrope",Arial,sans-serif}
+.magazine{width:100%;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 12px}
+.poster{position:relative;overflow:hidden;aspect-ratio:580/832;background:var(--paper) center top/100% 100% no-repeat}
+.poster-one{background-image:url("assets/poster-1.jpg")}
+.poster-two{background-image:url("assets/poster-2.jpg")}
+.poster-three{background-image:url("assets/poster-3.jpg")}
+.form-wrap{position:absolute;left:7%;right:7%;top:20%;height:65%;overflow:auto;background:rgba(255,243,226,.97);padding:clamp(12px,1.2vw,22px);border:1px solid rgba(32,32,32,.13);box-shadow:0 8px 24px #20202012}
+.form-wrap h2{margin:0 0 5px;font-size:clamp(15px,1.35vw,25px);line-height:1.05;letter-spacing:-.04em}
+.form-subtitle{margin:0 0 10px;font-size:clamp(10px,.85vw,15px)}
+.google-form{display:block;width:100%;height:560px;border:0;background:transparent}
+.form-fallback{font-size:11px;margin:8px 0 0;line-height:1.3}
+.form-fallback a{color:var(--red);font-weight:800}
+form{display:flex;flex-direction:column;gap:8px;font-size:clamp(11px,.83vw,15px)}
+form>label,legend{font-weight:800}
+input[type=text],textarea{width:100%;border:1px solid #202020;background:#fffaf3;padding:9px;font:inherit;border-radius:0}
+fieldset{border:0;padding:0;margin:3px 0;display:flex;flex-direction:column;gap:5px}
+legend{margin-bottom:5px}
+.choice{display:flex;align-items:flex-start;gap:8px;font-weight:500;line-height:1.2;cursor:pointer}
+.choice input{accent-color:var(--red);margin:2px 0 0}
+button{border:0;background:var(--red);color:var(--paper);font:inherit;font-weight:800;padding:11px 13px;text-align:left;cursor:pointer}
+button:hover{filter:brightness(.92)}
+.form-note{font-size:10px;line-height:1.3;margin:0;opacity:.72}
+#form-message{font-weight:800;color:var(--red)}
+@media(min-width:1400px){.magazine{gap:18px;padding:0 18px}}
+@media(max-width:760px){
+ body{background:var(--paper)}
+ .magazine{display:flex;flex-direction:column;gap:0;padding:0;width:100%}
+ .poster{width:100%;aspect-ratio:580/832;background-size:100% 100%}
+ .form-wrap{top:19%;left:6%;right:6%;height:66%;padding:14px}
+ .google-form{height:560px}
+ .form-wrap h2{font-size:21px}
+ form{font-size:14px;gap:7px}
+ .form-subtitle{font-size:12px}
+}
+@media(max-width:390px){.form-wrap{padding:10px;top:29%;height:66%}.form-wrap h2{font-size:18px}.google-form{height:560px}}
